@@ -1,0 +1,47 @@
+{
+  "name": "@content-hub/portal",
+  "version": "1.192.8",
+  "description": "A single page application for the content hub content creation portal.",
+  "repository": {
+    "type": "git",
+    "url": "https://stash.benevity.org/projects/WEB/repos/content-hub-ui"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@benevity/openapi-faker": "^2.0.0",
+    "@bonfire/common": "^1.5.61",
+    "@bonfire/framework": "^7.2.0",
+    "@bonfire/giving": "^1.7.33",
+    "@bonfire/legacy": "^2.13.1",
+    "@bonfire/skyline": "^1.6.0",
+    "@content-hub/shared": "^3.7.4",
+    "@fortawesome/fontawesome-pro": "^5.15.2",
+    "@okta/okta-auth-js": "^4.1.2",
+    "@okta/okta-vue": "^3.1.0",
+    "@popperjs/core": "^2.6.0",
+    "@skyline/icons": "^2.0.0",
+    "@skyline/scss": "^3.3.0",
+    "@skyline/tokens": "^1.22.0",
+    "@skyline/vue": "^8.3.0",
+    "@vue/composition-api": "^1.0.0-beta.26",
+    "gsap": "^3.6.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.33",
+    "striptags": "^3.1.1",
+    "swagger-client": "^3.13.1",
+    "tippy.js": "^6.2.3",
+    "vue-drag-drop": "^1.1.4",
+    "vue-gtm": "3.4.1-vue2",
+    "vue-hotjar": "^1.2.0",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2",
+    "webcrypto-shim": "^0.1.5"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "1.1.4"
+  },
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  }
+}

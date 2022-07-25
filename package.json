@@ -1,0 +1,129 @@
+{
+  "name": "content-hub-ui",
+  "version": "1.2.0",
+  "description": "A collection of UI assets built around the Content Hub API",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://stash.benevity.org/projects/WEB/repos/content-hub-ui"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "commit": "cross-env CZ_ISSUES=\"$(git rev-parse --abbrev-ref HEAD)\" git-cz",
+    "generate:module": "cross-env node commands/generate/module",
+    "portal:build": "cross-env NODE_ENV=production node commands/portal/build",
+    "portal:dev": "cross-env NODE_ENV=development node commands/portal/dev",
+    "portal:serve": "node commands/portal/serve",
+    "unit": "TZ=UTC jest",
+    "coverage-report": "yarn run unit && node commands/coverage-report",
+    "sonar-scanner": "node commands/sonar-scanner",
+    "lint": "yarn lint:js && yarn lint:scss",
+    "lint:js": "eslint --ext .js,.vue packages cypress commands",
+    "lint:js:fix": "eslint --fix --ext .js,.vue packages cypress commands",
+    "lint:scss": "stylelint '+(packages)/**/*.+(vue|scss|css|sass)'",
+    "mock-api": "yarn openapi-faker __mocks__/openapi.json",
+    "cypress:run": "cross-env NODE_ENV=test node commands/cypress/run",
+    "cypress:dev": "yarn run cypress open",
+    "storybook": "start-storybook -p 6006 --no-manager-cache",
+    "storybook:build": "build-storybook --webpack-stats-json",
+    "prepublishOnly": "node commands/bundle"
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.benevity-shared.org/api/npm/content-hub-npm-prod-local/"
+  },
+  "jestSonar": {
+    "reportPath": "./sonarqube"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@benevity/openapi-faker": "^2.0.0",
+    "@bonfire/commitlint-plugin-benevity": "^1.0.1",
+    "@bonfire/common": "^1.5.61",
+    "@bonfire/eslint-plugin-benevity": "^1.0.0",
+    "@bonfire/framework": "^7.2.0",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/vue": "^6.1.14",
+    "@vitejs/plugin-legacy": "^1.3.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^26.6.3",
+    "chalk": "^4.1.0",
+    "chromatic": "^5.8.2",
+    "commitizen": "^4.2.3",
+    "conventional-commits-parser": "^3.1.0",
+    "cross-env": "^7.0.3",
+    "cypress": "^6.5.0",
+    "cypress-file-upload": "^4.1.1",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-vue": "^7.4.1",
+    "eslint-restricted-globals": "^0.2.0",
+    "fs-extra": "^10.0.0",
+    "html-webpack-plugin": "^4.5.1",
+    "husky": "^4.3.8",
+    "inquirer": "^8.0.0",
+    "jest": "^26.6.3",
+    "jest-environment-jsdom": "^26.6.2",
+    "jest-junit": "^12.0.0",
+    "jest-resolve": "^26.6.2",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-sonar-reporter": "^2.0.0",
+    "js-yaml": "^4.0.0",
+    "lerna": "^4.0.0",
+    "local-web-server": "^4.2.1",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "mini-css-extract-plugin": "0.4.1",
+    "open": "^8.0.8",
+    "ora": "^5.1.0",
+    "simple-git": "^2.31.0",
+    "sonarqube-scanner": "^2.8.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
+    "stylelint-selector-bem-pattern": "^2.0.0",
+    "stylelint-webpack-plugin": "^2.1.1",
+    "svgo": "^1.3.2",
+    "svgo-loader": "^2.2.1",
+    "swagger-client": "^3.13.1",
+    "vite": "^2.2.0",
+    "vite-plugin-vue2": "^1.4.4",
+    "vite-plugin-vue2-svg": "^0.1.7",
+    "vue-eslint-parser": "^7.3.0",
+    "vue-jest": "^3.0.5",
+    "vue-svg-loader": "^0.16.0",
+    "yargs": "^17.0.1"
+  },
+  "resolutions": {
+    "decompress-response": "^4.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">= 14.15.0",
+    "npm": ">= 6.0.0",
+    "yarn": ">= 1.22.5"
+  }
+}

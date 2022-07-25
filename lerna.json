@@ -1,0 +1,13 @@
+{
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "command": {
+    "version": {
+      "message": "chore(release): update package versions"
+    },
+    "publish": {
+      "registry": "https://artifactory.benevity-shared.org/api/npm/content-hub-npm-prod-local/"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@content-hub/shared",
+  "version": "3.7.4",
+  "description": "A collection of UI assets built around the Content Hub API",
+  "main": "dist/bundle.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://stash.benevity.org/projects/WEB/repos/content-hub-ui"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@bonfire/common": "^1.5.61",
+    "@bonfire/framework": "^7.2.0",
+    "@bonfire/giving": "^1.7.33",
+    "@bonfire/legacy": "^2.13.1",
+    "@bonfire/skyline": "^1.6.0",
+    "@fortawesome/fontawesome-pro": "^5.15.2",
+    "@skyline/scss": "^3.3.0",
+    "@skyline/vue": "^8.3.0",
+    "deep-diff": "^1.0.2",
+    "lodash": "^4.17.11",
+    "moment": "^2.19.2",
+    "moment-timezone": "^0.5.23",
+    "swagger-client": "^3.12.2",
+    "vue-gtm": "3.4.1-vue2",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "1.1.4"
+  }
+}
