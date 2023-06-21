@@ -16,7 +16,7 @@
     "@bonfire/skyline": "^1.6.0",
     "@content-hub/shared": "^3.7.4",
     "@fortawesome/fontawesome-pro": "^5.15.2",
-    "@okta/okta-auth-js": "^4.1.2",
+    "@okta/okta-auth-js": "^5.2.0",
     "@okta/okta-vue": "^3.1.0",
     "@popperjs/core": "^2.6.0",
     "@skyline/icons": "^2.0.0",
